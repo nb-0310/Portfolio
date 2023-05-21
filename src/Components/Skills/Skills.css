@@ -1,0 +1,137 @@
+.skills {
+    font-size: 88px;
+    text-align: center;
+    color: var(--text-color);
+    padding: 50px 0;
+    position: relative;
+}
+
+.skills::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 75%;
+    background-color: var(--accent-3);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.skills > h1 {
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.skills-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill {
+    flex-basis: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.tooltip {
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: translateX(-100%);
+    padding: 10px 15px;
+    border-radius: 7px;
+    font-size: 20px;
+    background-color: var(--accent-3);
+    visibility: hidden;
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity 0.25s ease;
+}
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    border: 15px solid;
+    border-color: #0000 #0000 #0000 var(--accent-3);
+}
+
+.skill-icon:hover ~ .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.skill-icon:hover {
+    transform: scale(105%);
+}
+
+.skill-icon {
+    color: var(--accent-3);
+    width: 150px;
+    height: 150px;
+    transition: scale 0.25s ease;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 875px) {
+    .skills {
+        font-size: 50px;
+        padding: 30px 0;
+    }
+
+    .skills-container {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .skill {
+        flex-basis: 20%;
+    }
+
+    .skill-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .tooltip {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .skills {
+        font-size: 32px;
+        padding: 20px 0;
+    }
+
+    .skills-container {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .skill {
+        flex-basis: 40%;
+    }
+
+    .skill-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .tooltip {
+        font-size: 12px;
+    }
+}
